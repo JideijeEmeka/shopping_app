@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shopping_app/views/beauty_health.dart';
 import 'package:shopping_app/views/homePageSlider.dart';
+import 'package:shopping_app/views/popular_categories.dart';
 import 'package:shopping_app/views/selling_items_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -87,81 +89,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               HomePageSlider(),
               SellingItemsCarousel(),
-              Container(
-                color: Colors.grey.withOpacity(0.11),
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                height: 230,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 15),
-                      child: Text('Popular Categories',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.5,
-                          )),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                      height: 130,
-                      margin: EdgeInsets.symmetric(horizontal: 15),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
-                      ),
-                      child: Stack(
-                        children: [
-                          Expanded(
-                            child: Row(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    'assets/images/digital_10.jpg',
-                                    height: 100,
-                                    width: 100,
-                                  ),
-                                ),
-                                Image.asset(
-                                  'assets/images/furniture_05.jpg',
-                                  height: 100,
-                                  width: 100,
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    'assets/images/digital_08.jpg',
-                                    height: 100,
-                                    width: 100,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 25,
-                            child: Container(
-                                margin: EdgeInsets.symmetric(horizontal: 8),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.white,
-                                ),
-                                child: Text('Electronics',
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w600,
-                                    ))),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              PopularCategories(),
+              BeautyHealth(),
+              PhoneTablets(),
             ],
           ),
         ));
