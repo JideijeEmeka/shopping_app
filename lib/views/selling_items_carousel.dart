@@ -21,7 +21,9 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
           borderRadius: BorderRadius.circular(8),
           color: Colors.white,
         ),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start, 
+          children: [
           SizedBox(height: 5),
           Text(" Top Selling Items",
               style: TextStyle(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class PhoneAccessories extends StatefulWidget {
-
   @override
   _PhoneAccessoriesState createState() => _PhoneAccessoriesState();
 }
@@ -34,20 +33,20 @@ class _PhoneAccessoriesState extends State<PhoneAccessories> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          'assets/images/digital_01.jpg',
-                          height: 92,
+                          'assets/images/accessory.jpg',
+                          height: 70,
                           width: 100,
                         ),
                       ),
                       Image.asset(
-                        'assets/images/digital_04.jpg',
-                        height: 120,
+                        'assets/images/accessory1.jpg',
+                        height: 80,
                         width: 100,
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          'assets/images/digital_02.jpg',
+                          'assets/images/accessory2.jpg',
                           height: 120,
                           width: 100,
                         ),
@@ -56,7 +55,7 @@ class _PhoneAccessoriesState extends State<PhoneAccessories> {
                   ),
                 ),
                 Positioned(
-                  bottom: 10,
+                  bottom: 8,
                   child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 8),
                       decoration: BoxDecoration(

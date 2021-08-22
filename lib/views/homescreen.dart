@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          toolbarHeight: 100,
           title: Row(
             children: [
               Container(
@@ -78,9 +79,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          backgroundColor: Colors.white12,
-          elevation: 0,
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
         ),
+        // extendBodyBehindAppBar: true,
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
