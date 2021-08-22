@@ -10,6 +10,8 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+Color c = const Color.fromRGBO(160, 32, 240, 0.8);
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   decoration: InputDecoration(
                       suffixIcon: CircleAvatar(
                         radius: 10,
-                        backgroundColor: Colors.purple,
+                        backgroundColor: c,
                         child: Container(
                           child: IconButton(
                               onPressed: () {},
@@ -89,7 +91,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.grey.withOpacity(0.11),
                 margin: EdgeInsets.symmetric(horizontal: 30),
                 height: 230,
-                width: 350,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -102,18 +103,59 @@ class _HomeScreenState extends State<HomeScreen> {
                             letterSpacing: 1.5,
                           )),
                     ),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Container(
-                      height: 100,
-                      margin: EdgeInsets.all(15),
+                      height: 130,
+                      margin: EdgeInsets.symmetric(horizontal: 15),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                       ),
-                      child: Row(
+                      child: Stack(
                         children: [
-                          // Image.asset('name'),
-                          // Image.asset('name'),
-                          // Image.asset('name'),
+                          Expanded(
+                            child: Row(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    'assets/images/digital_10.jpg',
+                                    height: 100,
+                                    width: 100,
+                                  ),
+                                ),
+                                Image.asset(
+                                  'assets/images/furniture_05.jpg',
+                                  height: 100,
+                                  width: 100,
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    'assets/images/digital_08.jpg',
+                                    height: 100,
+                                    width: 100,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 25,
+                            child: Container(
+                                margin: EdgeInsets.symmetric(horizontal: 8),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white,
+                                ),
+                                child: Text('Electronics',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w600,
+                                    ))),
+                          ),
                         ],
                       ),
                     ),
