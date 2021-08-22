@@ -21,17 +21,13 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
           borderRadius: BorderRadius.circular(8),
           color: Colors.white,
         ),
-        child: Column(children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 5),
-          Row(
-            children: [
-              Text(" Top Selling Items",
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.5)),
-            ],
-          ),
+          Text(" Top Selling Items",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5)),
           Expanded(
             child: Container(
                 height: 250,
@@ -42,7 +38,7 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
                       SellingItems sellingItem = sellingitems[index];
                       return Container(
                         width: 130,
-                        margin: EdgeInsets.all(1),
+                        margin: EdgeInsets.all(0),
                         child: Stack(
                           alignment: Alignment.topCenter,
                           children: [

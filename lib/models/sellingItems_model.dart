@@ -20,7 +20,7 @@ List<Activity> activities = [
     items: [],
   ),
   Activity(
-    imageUrl: 'assets/images/3-slide-banner-1.jpg',
+    imageUrl: 'assets/images/blog-article-5.jpg',
     price: '₦3,400',
     items: [],
   ),
@@ -30,6 +30,21 @@ List<Activity> activities = [
       items: []),
   Activity(
     imageUrl: 'assets/images/main-slider-2-3.jpg',
+    price: '₦3,400',
+    items: [],
+  ),
+  Activity(
+    imageUrl: 'assets/images/2-megamenu_tool_equiment_banner_2.jpg',
+    price: '₦3,400',
+    items: [],
+  ),
+  Activity(
+    imageUrl: 'assets/images/2-smartphone-laptop-banner-1.jpg',
+    price: '₦3,400',
+    items: [],
+  ),
+  Activity(
+    imageUrl: 'assets/images/home-2-banner-1.jpg',
     price: '₦3,400',
     items: [],
   ),
@@ -53,6 +68,21 @@ List<SellingItems> sellingitems = [
   ),
   SellingItems(
     imageUrl: 'assets/images/main-slider-2-3.jpg',
+    price: '₦3,400',
+    activities: activities,
+  ),
+  SellingItems(
+    imageUrl: 'assets/images/2-megamenu_tool_equiment_banner_2.jpg',
+    price: '₦3,400',
+    activities: activities,
+  ),
+  SellingItems(
+    imageUrl: 'assets/images/2-smartphone-laptop-banner-1.jpg',
+    price: '₦3,400',
+    activities: activities,
+  ),
+  SellingItems(
+    imageUrl: 'assets/images/blog-article-5.jpg',
     price: '₦3,400',
     activities: activities,
   ),
