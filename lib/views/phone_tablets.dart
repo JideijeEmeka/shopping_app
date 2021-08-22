@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class BeautyHealth extends StatefulWidget {
+class PhoneTablets extends StatefulWidget {
   @override
-  _BeautyHealthState createState() => _BeautyHealthState();
+  _PhoneTabletsState createState() => _PhoneTabletsState();
 }
 
-class _BeautyHealthState extends State<BeautyHealth> {
+class _PhoneTabletsState extends State<PhoneTablets> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,20 +33,20 @@ class _BeautyHealthState extends State<BeautyHealth> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          'assets/images/organics_spa_2.jpg',
-                          height: 120,
+                          'assets/images/digital_01.jpg',
+                          height: 92,
                           width: 100,
                         ),
                       ),
                       Image.asset(
-                        'assets/images/organics_spa_3.jpg',
+                        'assets/images/digital_04.jpg',
                         height: 120,
                         width: 100,
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          'assets/images/organics_spa_4.jpg',
+                          'assets/images/digital_02.jpg',
                           height: 120,
                           width: 100,
                         ),
@@ -62,7 +62,7 @@ class _BeautyHealthState extends State<BeautyHealth> {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                       ),
-                      child: Text('Beauty & Health',
+                      child: Text('Phones & Tablets',
                           style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w600,

@@ -4,6 +4,8 @@ import 'package:badges/badges.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/views/beauty_health.dart';
 import 'package:shopping_app/views/homePageSlider.dart';
+import 'package:shopping_app/views/phone_accessories.dart';
+import 'package:shopping_app/views/phone_tablets.dart';
 import 'package:shopping_app/views/popular_categories.dart';
 import 'package:shopping_app/views/selling_items_carousel.dart';
 
@@ -92,6 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
               PopularCategories(),
               BeautyHealth(),
               PhoneTablets(),
+              PhoneAccessories(),
             ],
           ),
         ));
