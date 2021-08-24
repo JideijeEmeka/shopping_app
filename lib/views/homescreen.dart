@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/views/beauty_health.dart';
+import 'package:shopping_app/views/flash_sales_carousel.dart';
 import 'package:shopping_app/views/homePageSlider.dart';
 import 'package:shopping_app/views/phone_accessories.dart';
 import 'package:shopping_app/views/phone_tablets.dart';
@@ -97,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BeautyHealth(),
               PhoneTablets(),
               PhoneAccessories(),
+              FlashSalesCarousel(),
             ],
           ),
         ));

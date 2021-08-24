@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shopping_app/models/sellingItems_model.dart';
+import 'package:shopping_app/models/flashSales_model.dart';
 
-class SellingItemsCarousel extends StatefulWidget {
+class FlashSalesCarousel extends StatefulWidget {
   @override
-  _SellingItemsCarouselState createState() => _SellingItemsCarouselState();
+  _FlashSalesCarouselState createState() => _FlashSalesCarouselState();
 }
 
-class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
+class _FlashSalesCarouselState extends State<FlashSalesCarousel> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,11 +21,9 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
           borderRadius: BorderRadius.circular(8),
           color: Colors.white,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, 
-          children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 5),
-          Text(" Top Selling Items",
+          Text(" Flash Sales",
               style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
@@ -35,9 +33,9 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
                 height: 250,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: sellingitems.length,
+                    itemCount: flashsales.length,
                     itemBuilder: (BuildContext context, int index) {
-                      SellingItems sellingItem = sellingitems[index];
+                      FlashItems flashItem = flashsales[index];
                       return Container(
                         width: 130,
                         margin: EdgeInsets.all(0),
@@ -60,7 +58,7 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Text(
-                                      sellingItem.price,
+                                      flashItem.price,
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
@@ -80,7 +78,8 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
                                               MainAxisAlignment.center,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
-                                          children: [                                           Expanded(
+                                          children: [
+                                            Expanded(
                                               child: IconButton(
                                                 iconSize: 16,
                                                 icon: Icon(
@@ -127,7 +126,7 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Image.asset(
-                                    sellingItem.imageUrl,
+                                    flashItem.imageUrl,
                                     fit: BoxFit.fill,
                                     height: 120,
                                     width: 200,

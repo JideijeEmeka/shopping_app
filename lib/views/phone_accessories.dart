@@ -11,7 +11,7 @@ class _PhoneAccessoriesState extends State<PhoneAccessories> {
     return Container(
       color: Colors.grey.withOpacity(0.11),
       margin: EdgeInsets.symmetric(horizontal: 30),
-      height: 130,
+      height: 121,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
