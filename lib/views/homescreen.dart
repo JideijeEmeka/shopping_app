@@ -8,6 +8,7 @@ import 'package:shopping_app/views/homePageSlider.dart';
 import 'package:shopping_app/views/phone_accessories.dart';
 import 'package:shopping_app/views/phone_tablets.dart';
 import 'package:shopping_app/views/popular_categories.dart';
+import 'package:shopping_app/views/recommended_view.dart';
 import 'package:shopping_app/views/selling_items_carousel.dart';
 import 'package:shopping_app/views/top_brands_carousel.dart';
 
@@ -101,6 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
               PhoneAccessories(),
               FlashSalesCarousel(),
               TopBrandsCarousel(),
+              RecommendedView(),
             ],
           ),
         ));

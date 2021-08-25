@@ -39,18 +39,12 @@ class _TopBrandsCarouselState extends State<TopBrandsCarousel> {
                 itemBuilder: (BuildContext context, int index) {
                   TopBrands topBrand = topbrands[index];
                   return Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    margin: EdgeInsets.symmetric(horizontal: 4),
                     width: 120,
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(0, 0),
-                            blurRadius: 0.2,
-                          )
-                        ]),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(

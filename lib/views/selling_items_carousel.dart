@@ -21,9 +21,7 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
           borderRadius: BorderRadius.circular(8),
           color: Colors.white,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, 
-          children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 5),
           Text(" Top Selling Items",
               style: TextStyle(
@@ -80,7 +78,8 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
                                               MainAxisAlignment.center,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
-                                          children: [                                           Expanded(
+                                          children: [
+                                            Expanded(
                                               child: IconButton(
                                                 iconSize: 16,
                                                 icon: Icon(
@@ -115,15 +114,9 @@ class _SellingItemsCarouselState extends State<SellingItemsCarousel> {
                               child: Container(
                                 width: 120,
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        offset: Offset(0, 0),
-                                        blurRadius: 0.2,
-                                      )
-                                    ]),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Image.asset(

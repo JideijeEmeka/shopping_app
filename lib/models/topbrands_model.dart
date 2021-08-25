@@ -8,21 +8,21 @@ class TopBrands {
 
 List<TopBrands> topbrands = [
   TopBrands(
-    imageUrl: 'assets/images/download5.jpg',
+    imageUrl: 'assets/images/digital_05.jpg',
   ),
   TopBrands(
-    imageUrl: 'assets/images/download7.jpg',
+    imageUrl: 'assets/images/organics_spa_7.jpg',
   ),
   TopBrands(
-    imageUrl: 'assets/images/download3.jpg',
+    imageUrl: 'assets/images/digital_13.jpg',
   ),
   TopBrands(
     imageUrl: 'assets/images/fashion_05.jpg',
   ),
   TopBrands(
-    imageUrl: 'assets/images/download4.jpg',
+    imageUrl: 'assets/images/digital_11.jpg',
   ),
   TopBrands(
-    imageUrl: 'assets/images/digital_05.jpg',
+    imageUrl: 'assets/images/fashion_03.jpg',
   ),
 ];
