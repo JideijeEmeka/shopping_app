@@ -12,14 +12,14 @@ class _HomePageSliderState extends State<HomePageSlider> {
     return Stack(
       children: [
         Container(
-          height: 170,
+          height: 150,
           margin: EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.11),
           ),
         ),
         Container(
-          height: 160,
+          height: 150,
           margin: EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -32,7 +32,7 @@ class _HomePageSliderState extends State<HomePageSlider> {
               CarouselSlider(
                 items: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       'assets/images/mainslider.jpg',
                       fit: BoxFit.cover,
@@ -40,7 +40,7 @@ class _HomePageSliderState extends State<HomePageSlider> {
                     ),
                   ),
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       'assets/images/blog-article-5.jpg',
                       fit: BoxFit.cover,
@@ -48,7 +48,7 @@ class _HomePageSliderState extends State<HomePageSlider> {
                     ),
                   ),
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       'assets/images/fashion_07.jpg',
                       fit: BoxFit.fill,
@@ -56,7 +56,7 @@ class _HomePageSliderState extends State<HomePageSlider> {
                     ),
                   ),
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       'assets/images/main-slider-3-3.jpg',
                       fit: BoxFit.cover,
@@ -64,7 +64,7 @@ class _HomePageSliderState extends State<HomePageSlider> {
                     ),
                   ),
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       'assets/images/fashion_02.jpg',
                       fit: BoxFit.fill,
@@ -80,7 +80,7 @@ class _HomePageSliderState extends State<HomePageSlider> {
                   autoPlayCurve: Curves.fastOutSlowIn,
                   autoPlayAnimationDuration: Duration(milliseconds: 800),
                   viewportFraction: 0.8,
-                  height: 160,
+                  height: 150,
                 ),
               )
             ],

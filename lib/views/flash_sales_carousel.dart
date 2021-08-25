@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shopping_app/models/flashSales_model.dart';
 
@@ -23,11 +26,110 @@ class _FlashSalesCarouselState extends State<FlashSalesCarousel> {
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 5),
-          Text(" Flash Sales",
-              style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5)),
+          Row(
+            children: [
+              Text(" Flash Sales",
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5)),
+              SizedBox(
+                width: 5,
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.red,
+                radius: 8,
+                child: Icon(
+                  FontAwesomeIcons.bolt,
+                  size: 10,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              Container(
+                height: 21,
+                width: 25,
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(3)),
+                child: Padding(
+                  padding: const EdgeInsets.all(3.0),
+                  child: Text(
+                    '24',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 3,
+              ),
+              Text(
+                ':',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w800),
+              ),
+              SizedBox(
+                width: 3,
+              ),
+              Container(
+                height: 21,
+                width: 25,
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(3)),
+                child: Padding(
+                  padding: const EdgeInsets.all(3.0),
+                  child: Text(
+                    '34',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 3,
+              ),
+              Text(
+                ':',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w800),
+              ),
+              SizedBox(
+                width: 3,
+              ),
+              Container(
+                height: 21,
+                width: 25,
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(3)),
+                child: Padding(
+                  padding: const EdgeInsets.all(3.0),
+                  child: Text(
+                    '58',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
+          ),
           Expanded(
             child: Container(
                 height: 250,
@@ -54,8 +156,7 @@ class _FlashSalesCarouselState extends State<FlashSalesCarousel> {
                                 ),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Text(
                                       flashItem.price,
@@ -64,46 +165,15 @@ class _FlashSalesCarouselState extends State<FlashSalesCarousel> {
                                           fontWeight: FontWeight.bold,
                                           fontSize: 17),
                                     ),
-                                    SizedBox(width: 5),
-                                    Expanded(
-                                      child: Container(
-                                        width: 50,
-                                        height: 30,
-                                        decoration: BoxDecoration(
-                                            color: Colors.blue,
-                                            borderRadius:
-                                                BorderRadius.circular(30)),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Expanded(
-                                              child: IconButton(
-                                                iconSize: 16,
-                                                icon: Icon(
-                                                    FontAwesomeIcons.chartLine),
-                                                onPressed: () {},
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(7.0),
-                                              child: Text(
-                                                'Top',
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                                textAlign: TextAlign.justify,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
+                                    SizedBox(width: 7),
+                                    Text(
+                                      '₦1,500',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.black45,
+                                          decoration:
+                                              TextDecoration.lineThrough),
+                                    )
                                   ],
                                 ),
                               ),
@@ -111,27 +181,55 @@ class _FlashSalesCarouselState extends State<FlashSalesCarousel> {
                             Positioned(
                               bottom: 45,
                               left: 8,
-                              child: Container(
-                                width: 120,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        offset: Offset(0, 0),
-                                        blurRadius: 0.2,
-                                      )
-                                    ]),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    flashItem.imageUrl,
-                                    fit: BoxFit.fill,
-                                    height: 120,
-                                    width: 200,
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    width: 120,
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey,
+                                            offset: Offset(0, 0),
+                                            blurRadius: 0.2,
+                                          )
+                                        ]),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.asset(
+                                        flashItem.imageUrl,
+                                        fit: BoxFit.fill,
+                                        height: 120,
+                                        width: 200,
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                  Positioned(
+                                    top: 10,
+                                    child: Container(
+                                      margin:
+                                          EdgeInsets.symmetric(horizontal: 75),
+                                      height: 20,
+                                      width: 35,
+                                      decoration: BoxDecoration(
+                                          color: Colors.purple,
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(2.0),
+                                        child: Text(
+                                          '24%',
+                                          style: TextStyle(
+                                              fontSize: 13,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],

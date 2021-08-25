@@ -9,6 +9,7 @@ import 'package:shopping_app/views/phone_accessories.dart';
 import 'package:shopping_app/views/phone_tablets.dart';
 import 'package:shopping_app/views/popular_categories.dart';
 import 'package:shopping_app/views/selling_items_carousel.dart';
+import 'package:shopping_app/views/top_brands.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -99,6 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
               PhoneTablets(),
               PhoneAccessories(),
               FlashSalesCarousel(),
+              TopBrands(),
             ],
           ),
         ));
