@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/models/topbrands_model.dart';
 
-class TopBrands extends StatefulWidget {
+class TopBrandsCarousel extends StatefulWidget {
   @override
-  _TopBrandsState createState() => _TopBrandsState();
+  _TopBrandsCarouselState createState() => _TopBrandsCarouselState();
 }
 
-class _TopBrandsState extends State<TopBrands> {
+class _TopBrandsCarouselState extends State<TopBrandsCarousel> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,22 +37,30 @@ class _TopBrandsState extends State<TopBrands> {
                 itemCount: topbrands.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  // TopBrands topBrand = topbrands[index];
+                  TopBrands topBrand = topbrands[index];
                   return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 5),
-                      width: 120,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              offset: Offset(0, 0),
-                              blurRadius: 0.2,
-                            )
-                          ])
-                          child: ,
-                          );
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    width: 120,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0, 0),
+                            blurRadius: 0.2,
+                          )
+                        ]),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        topBrand.imageUrl,
+                        height: 120,
+                        width: 200,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  );
                 }),
           ))
         ],
