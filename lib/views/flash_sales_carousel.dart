@@ -46,7 +46,7 @@ class _FlashSalesCarouselState extends State<FlashSalesCarousel> {
                 ),
               ),
               SizedBox(
-                width: 15,
+                width: 20,
               ),
               Container(
                 height: 21,
