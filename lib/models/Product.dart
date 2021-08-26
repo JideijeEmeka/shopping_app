@@ -14,45 +14,27 @@ class Product {
 
 List<Product> products = [
   Product(
-    image: 'assets/images/digital_05.jpg',
-    description: "Adidas Yeezy 380 v3 ..",
-    price: '₦35,000',
-    oldPrice: '₦50,000',
-    discount: '31% OFF'
-  ),
+      image: 'assets/images/bag1.jpg',
+      description: "Adidas Yeezy 380 v3 ..",
+      price: '₦35,000',
+      oldPrice: '₦50,000',
+      discount: '31% OFF'),
   Product(
-    image: 'assets/images/organics_spa_7.jpg',
-    description: "Adidas Yeezy 380 v3 ..",
-    price: '₦35,000',
-    oldPrice: '₦50,000',
-    discount: '31% OFF'
-  ),
+      image: 'assets/images/phone.jpg',
+      description: "Adidas Yeezy 380 v3 ..",
+      price: '₦35,000',
+      oldPrice: '₦50,000',
+      discount: '31% OFF'),
   Product(
-    image: 'assets/images/digital_13.jpg',
-    description: "Adidas Yeezy 380 v3 ..",
-    price: '₦35,000',
-    oldPrice: '₦50,000',
-    discount: '31% OFF'
-  ),
+      image: 'assets/images/phone1.jpg',
+      description: "Adidas Yeezy 380 v3 ..",
+      price: '₦35,000',
+      oldPrice: '₦50,000',
+      discount: '31% OFF'),
   Product(
-    image: 'assets/images/fashion_05.jpg',
-    description: "Adidas Yeezy 380 v3 ..",
-    price: '₦35,000',
-    oldPrice: '₦50,000',
-    discount: '31% OFF'
-  ),
-  Product(
-    image: 'assets/images/digital_11.jpg',
-    description: "Adidas Yeezy 380 v3 ..",
-    price: '₦35,000',
-    oldPrice: '₦50,000',
-    discount: '31% OFF'
-  ),
-  Product(
-    image: 'assets/images/fashion_03.jpg',
-    description: "Adidas Yeezy 380 v3 ..",
-    price: '₦35,000',
-    oldPrice: '₦50,000',
-    discount: '31% OFF'
-  ),
+      image: 'assets/images/fashion_09.jpg',
+      description: "Adidas Yeezy 380 v3 ..",
+      price: '₦35,000',
+      oldPrice: '₦50,000',
+      discount: '31% OFF'),
 ];
