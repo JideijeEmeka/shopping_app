@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/models/Product.dart';
 import 'package:shopping_app/views/pro_sons.dart';
@@ -10,6 +11,16 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  String dropdownvalue = 'Sort by recent';
+
+  var items = [
+    'Sort by recent',
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -519,7 +530,7 @@ class _BodyState extends State<Body> {
                               height: 10.5,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: Colors.grey.withOpacity(0.5),
+                                color: Colors.grey.withOpacity(0.4),
                               ),
                             ),
                           ],
@@ -668,7 +679,8 @@ class _BodyState extends State<Body> {
                           textStyle: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w900,
-                              fontSize: 15)),
+                              fontSize: 14,
+                              wordSpacing: 1.5)),
                       textAlign: TextAlign.center)),
             ),
             SizedBox(height: 18),
@@ -679,8 +691,80 @@ class _BodyState extends State<Body> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4),
                   color: Colors.grey.withOpacity(0.2)),
-                  
+              child: Container(
+                margin: EdgeInsets.all(6),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black.withOpacity(0.4)),
+                  borderRadius: BorderRadius.circular(4),
+                  color: Colors.white,
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton(
+                    isExpanded: true,
+                    items: items.map((itemsname) {
+                      return DropdownMenuItem(
+                          value: itemsname,
+                          child: Text(
+                            itemsname,
+                          ));
+                    }).toList(),
+                    onChanged: (newVal) {
+                      setState(() {
+                        dropdownvalue = newVal.toString();
+                      });
+                    },
+                    value: dropdownvalue,
+                    icon: Icon(
+                      Icons.keyboard_arrow_down,
+                      size: 18,
+                    ),
+                  ),
+                ),
+              ),
             ),
+            SizedBox(height: 30),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                children: [
+                  Icon(FontAwesomeIcons.userCircle, size: 24),
+                  SizedBox(
+                    width: 9,
+                  ),
+                  Text('Michael Pro',
+                      style: GoogleFonts.lato(
+                          textStyle: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold))),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    '★★★',
+                    style: TextStyle(
+                        fontSize: 19, color: Colors.orange, letterSpacing: 3),
+                  ),
+                  Text(
+                    '★★',
+                    style: TextStyle(
+                        fontSize: 19, color: Colors.grey, letterSpacing: 3),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              child: Text(
+                'This Men`s white, slim fitted shirt is designed with an elegant single button pointed collar and 2 button single cuffs. Finer details include stripe contrast detail on the inner collar and inner cuffs. Our fitted shirts have been flatteringly designed with darts at the waist and bust, creating a streamlined silhouette.',
+                style: GoogleFonts.lato(
+                    textStyle: TextStyle(
+                        color: Colors.black54, fontSize: 15, wordSpacing: 1)),
+              ),
+            ),
+            SizedBox(height: 5),
+            Container(),
           ],
         ),
       ),
