@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/models/Product.dart';
 import 'package:shopping_app/views/body.dart';
 
@@ -14,7 +15,77 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: buildAppBar(context),
-      body: Body(),
+      body: Stack(alignment: Alignment.bottomCenter, children: [
+        Body(),
+        SizedBox(
+          height: 200,
+        ),
+        Container(
+          height: 80,
+          width: 400,
+          color: Colors.white,
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 36),
+                height: 43,
+                width: 110,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.orangeAccent),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    'Add to cart',
+                    style: GoogleFonts.lato(
+                      textStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 13),
+                height: 43,
+                width: 120,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.deepPurple),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    'Buy Now',
+                    style: GoogleFonts.lato(
+                      textStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 25,
+              ),
+              CircleAvatar(
+                radius: 20,
+                backgroundColor: Colors.grey.withOpacity(0.3),
+                child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      FontAwesomeIcons.phoneAlt,
+                      color: Colors.deepPurple,
+                      size: 18,
+                    )),
+              )
+            ],
+          ),
+        ),
+      ]),
     );
   }
 
