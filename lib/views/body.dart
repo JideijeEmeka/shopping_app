@@ -31,7 +31,7 @@ class _BodyState extends State<Body> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 100,
+                height: 50,
               ),
               Container(
                 height: 295,
@@ -1046,7 +1046,7 @@ class _BodyState extends State<Body> {
                 ),
               ),
               Container(
-                height: 600,
+                height: 850,
                 width: 370,
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
@@ -1055,8 +1055,8 @@ class _BodyState extends State<Body> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(13.0),
+                    Container(
+                      margin: EdgeInsets.only(left: 15, top: 7),
                       child: Text('Recommended',
                           style: GoogleFonts.montserrat(
                               textStyle: TextStyle(
@@ -1065,61 +1065,25 @@ class _BodyState extends State<Body> {
                             letterSpacing: 1.5,
                           ))),
                     ),
-                    Container(
-                      height: 203,
-                      width: 165,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(6)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Stack(
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        child: GridView(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 10,
+                              crossAxisSpacing: 7,
+                              childAspectRatio: 0.77,
+                            ),
                             children: [
-                              Container(
-                                margin: EdgeInsets.all(4),
-                                child: Image.asset(
-                                  'assets/images/bag.jpg',
-                                  height: 150,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: EdgeInsets.symmetric(horizontal: 8),
-                            child: Text(
-                              products[0].description,
-                              style: GoogleFonts.lato(
-                                  textStyle: TextStyle(
-                                      fontSize: 12, letterSpacing: 1)),
-                            ),
-                          ),
-                          SizedBox(height: 4),
-                          Container(
-                            margin: EdgeInsets.symmetric(horizontal: 8),
-                            child: Row(
-                              children: [
-                                Text(products[0].price,
-                                    style: TextStyle(
-                                        fontSize: 17,
-                                        letterSpacing: 1.3,
-                                        fontWeight: FontWeight.bold)),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  products[0].oldPrice,
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w500,
-                                      decoration: TextDecoration.lineThrough),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
+                              Procard(),
+                              Procard1(),
+                              Procard2(),
+                              Procard3(),
+                              Procard4(),
+                              Procard5()
+                            ]),
                       ),
                     ),
                   ],
@@ -1128,6 +1092,421 @@ class _BodyState extends State<Body> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+//FIRST PROCARD GRID
+class Procard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 203,
+      width: 165,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(6)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.all(4),
+                child: Image.asset(
+                  'assets/images/bag.jpg',
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              Positioned(
+                top: 18,
+                left: -55,
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 75),
+                  height: 20,
+                  width: 55,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Text(
+                      products[0].discount,
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              products[0].description,
+              style: GoogleFonts.lato(
+                  textStyle: TextStyle(fontSize: 12, letterSpacing: 1)),
+            ),
+          ),
+          SizedBox(height: 4),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              children: [
+                Text(products[0].price,
+                    style: TextStyle(
+                        fontSize: 17,
+                        letterSpacing: 1.3,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  products[0].oldPrice,
+                  style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      decoration: TextDecoration.lineThrough),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Procard1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 203,
+      width: 165,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(6)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.all(4),
+                child: Image.asset(
+                  'assets/images/bag.jpg',
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              products[0].description,
+              style: GoogleFonts.lato(
+                  textStyle: TextStyle(fontSize: 12, letterSpacing: 1)),
+            ),
+          ),
+          SizedBox(height: 4),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              children: [
+                Text(products[0].price,
+                    style: TextStyle(
+                        fontSize: 17,
+                        letterSpacing: 1.3,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  products[0].oldPrice,
+                  style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      decoration: TextDecoration.lineThrough),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Procard2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 203,
+      width: 165,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(6)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.all(4),
+                child: Image.asset(
+                  products[2].image,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              products[0].description,
+              style: GoogleFonts.lato(
+                  textStyle: TextStyle(fontSize: 12, letterSpacing: 1)),
+            ),
+          ),
+          SizedBox(height: 4),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              children: [
+                Text(products[0].price,
+                    style: TextStyle(
+                        fontSize: 17,
+                        letterSpacing: 1.3,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  products[0].oldPrice,
+                  style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      decoration: TextDecoration.lineThrough),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Procard3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 203,
+      width: 165,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(6)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.all(4),
+                child: Image.asset(
+                  'assets/images/digital_01.jpg',
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              products[0].description,
+              style: GoogleFonts.lato(
+                  textStyle: TextStyle(fontSize: 12, letterSpacing: 1)),
+            ),
+          ),
+          SizedBox(height: 4),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              children: [
+                Text(products[0].price,
+                    style: TextStyle(
+                        fontSize: 17,
+                        letterSpacing: 1.3,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  products[0].oldPrice,
+                  style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      decoration: TextDecoration.lineThrough),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Procard4 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 203,
+      width: 165,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(6)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.all(4),
+                child: Image.asset(
+                  products[1].image,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              products[0].description,
+              style: GoogleFonts.lato(
+                  textStyle: TextStyle(fontSize: 12, letterSpacing: 1)),
+            ),
+          ),
+          SizedBox(height: 4),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              children: [
+                Text(products[0].price,
+                    style: TextStyle(
+                        fontSize: 17,
+                        letterSpacing: 1.3,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  products[0].oldPrice,
+                  style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      decoration: TextDecoration.lineThrough),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Procard5 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 203,
+      width: 165,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(6)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.all(4),
+                child: Image.asset(
+                  products[1].image,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              Positioned(
+                top: 18,
+                left: -55,
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 75),
+                  height: 20,
+                  width: 55,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Text(
+                      products[0].discount,
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              products[0].description,
+              style: GoogleFonts.lato(
+                  textStyle: TextStyle(fontSize: 12, letterSpacing: 1)),
+            ),
+          ),
+          SizedBox(height: 4),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              children: [
+                Text(products[0].price,
+                    style: TextStyle(
+                        fontSize: 17,
+                        letterSpacing: 1.3,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  products[0].oldPrice,
+                  style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      decoration: TextDecoration.lineThrough),
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
