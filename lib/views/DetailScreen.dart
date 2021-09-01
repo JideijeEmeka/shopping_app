@@ -47,24 +47,29 @@ class DetailScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(left: 13),
-                height: 43,
-                width: 120,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Colors.deepPurple),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Text(
-                    'Buy Now',
-                    style: GoogleFonts.lato(
-                      textStyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600),
+              GestureDetector(
+                onTap: () {
+                  _buyNowModalBottomSheet(context);
+                },
+                child: Container(
+                  margin: EdgeInsets.only(left: 13),
+                  height: 43,
+                  width: 120,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Colors.deepPurple),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      'Buy Now',
+                      style: GoogleFonts.lato(
+                        textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -85,20 +90,91 @@ class DetailScreen extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          height: 700,
+      ]),
+    );
+  }
+
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            FontAwesomeIcons.chevronLeft,
+            color: Colors.black,
+          )),
+      centerTitle: true,
+      title: Text(
+        'Details',
+        style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0.4,
+            color: Colors.black),
+      ),
+      actions: [
+        IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset(
+              'assets/images/icons8-home.svg',
+              width: 23,
+            )),
+        SizedBox(width: 3),
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                "assets/images/shopping-cart-svgrepo-com.svg",
+                width: 23,
+              ),
+            ),
+            Positioned(
+              bottom: 11,
+              left: 10,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Badge(
+                      shape: BadgeShape.circle,
+                      badgeColor: Colors.red,
+                      position: BadgePosition.topEnd(top: -10, end: -6),
+                      borderRadius: BorderRadius.circular(20),
+                      padding: EdgeInsets.all(4),
+                      badgeContent: Text(
+                        '5',
+                        style: TextStyle(color: Colors.white, fontSize: 9),
+                      ))),
+            ),
+          ],
+        ),
+        SizedBox(width: 10),
+      ],
+    );
+  }
+}
+
+void _buyNowModalBottomSheet(context) {
+  showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc) {
+        return Container(
+          height: 900,
           margin: EdgeInsets.symmetric(horizontal: 25),
           decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    offset: Offset(0, 3),
-                    spreadRadius: 5,
-                    blurRadius: 7)
-              ],
+              // boxShadow: [
+              //   BoxShadow(
+              //       color: Colors.grey.withOpacity(0.5),
+              //       offset: Offset(0, 3),
+              //       spreadRadius: 5,
+              //       blurRadius: 7)
+              // ],
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20), topRight: Radius.circular(25))),
+                  topLeft: Radius.circular(25), topRight: Radius.circular(25))),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -148,21 +224,31 @@ class DetailScreen extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    height: 80,
-                    width: 75,
-                    margin: EdgeInsets.only(left: 20),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Colors.grey),
-                  ),
+                      height: 80,
+                      width: 75,
+                      margin: EdgeInsets.only(left: 20),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.grey),
+                      child: Container(
+                          margin: EdgeInsets.all(2),
+                          child: Image.asset(
+                            'assets/images/tools_equipment_1.jpg',
+                            fit: BoxFit.fill,
+                          ))),
                   SizedBox(width: 15),
                   Container(
-                    height: 80,
-                    width: 75,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Colors.grey),
-                  ),
+                      height: 80,
+                      width: 75,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.grey),
+                      child: Container(
+                          margin: EdgeInsets.all(2),
+                          child: Image.asset(
+                            'assets/images/tools_equipment_6.jpg',
+                            fit: BoxFit.fill,
+                          ))),
                 ],
               ),
               SizedBox(
@@ -446,70 +532,6 @@ class DetailScreen extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ]),
-    );
-  }
-
-  AppBar buildAppBar(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            FontAwesomeIcons.chevronLeft,
-            color: Colors.black,
-          )),
-      centerTitle: true,
-      title: Text(
-        'Details',
-        style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            letterSpacing: 0.4,
-            color: Colors.black),
-      ),
-      actions: [
-        IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/images/icons8-home.svg',
-              width: 23,
-            )),
-        SizedBox(width: 3),
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(
-                "assets/images/shopping-cart-svgrepo-com.svg",
-                width: 23,
-              ),
-            ),
-            Positioned(
-              bottom: 11,
-              left: 10,
-              child: IconButton(
-                  onPressed: () {},
-                  icon: Badge(
-                      shape: BadgeShape.circle,
-                      badgeColor: Colors.red,
-                      position: BadgePosition.topEnd(top: -10, end: -6),
-                      borderRadius: BorderRadius.circular(20),
-                      padding: EdgeInsets.all(4),
-                      badgeContent: Text(
-                        '5',
-                        style: TextStyle(color: Colors.white, fontSize: 9),
-                      ))),
-            ),
-          ],
-        ),
-        SizedBox(width: 10),
-      ],
-    );
-  }
+        );
+      });
 }
