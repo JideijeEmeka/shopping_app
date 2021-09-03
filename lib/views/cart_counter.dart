@@ -80,31 +80,30 @@ class _CartCounterState extends State<CartCounter> {
                   Text(numOfItems.toString(), style: TextStyle(fontSize: 17)),
                   SizedBox(
                     width: 10,
-                  ),
-                  OutlinedButton(
-                    onPressed: () {
-                      if (numOfItems < 3) {
-                        setState(() {
-                          numOfItems++;
-                          price += amount;
-                          
-                        });
-                      } else {setState(() {
-                        isButtonClickable = false;
-                      });}
-                    },
-                    style: OutlinedButton.styleFrom(
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(30))),
-                            primary: Colors.black,
-                            backgroundColor: Colors.white,
-                            side: BorderSide(color: Colors.grey, width: 2)
-                            ),
-                    child: Icon(
-                      Icons.add,
-                      size: 25,
+                  ),OutlinedButton(
+                      onPressed: () {
+                        if (numOfItems < 3) {
+                          setState(() {
+                            numOfItems++;
+                            price += amount;
+                            
+                          });
+                        } else {setState(() {
+                          isButtonClickable = false;
+                        });}
+                      },
+                      style: OutlinedButton.styleFrom(
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(30))),
+                              primary: Colors.black,
+                              backgroundColor: Colors.white,
+                              side: BorderSide(color: Colors.grey, width: 2),
+                              ),
+                      child: Icon(
+                        Icons.add,
+                        size: 25,
+                      ),
                     ),
-                  ),
                 ],
               ),
             ),
