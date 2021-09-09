@@ -33,16 +33,21 @@ dependencies:
   flutter_svg: ^0.22.0
   font_awesome_flutter: ^9.1.0
   google_fonts: ^2.1.0
-  flutter_launcher_icons: ^0.9.2
-
-flutter_icons:
-image_path: "assets/launcherIcon/shoppingApplogo.jpg"
-android: true
-ios: true     
+     
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.2
+  # flutter_launcher_name: ^0.0.1
+
+flutter_icons:
+  image_path: "assets/AppIcon/shoppingApplogo.jpg"
+  android: true
+  ios: true
+
+# flutter_launcher_name: 
+#   name: "Shoppy"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
