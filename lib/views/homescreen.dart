@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-      ),
+      ),  
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentindex,
         type: BottomNavigationBarType.fixed,
